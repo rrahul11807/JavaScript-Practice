@@ -1,0 +1,38 @@
+const team = {
+  _players: [
+    { firstName: "Virat", lastName: "Kohli", age: 33 },
+    { firstName: "Rohit", lastName: "Sharma", age: 35},
+    { firstName: "Mahendra Singh", lastName: "Dhoni", age: 39},
+  ],
+  _games: [
+    { opponent: "Mumbai Indians", teamPoints: 10, opponentPoints: 0},
+    { opponent: "Chennai Super Kings", teamPoints: 0, opponentPoints: 4},
+    { opponent: "Royal Challengers Bangalore", teamPoints: 4, opponentPoints: 10},
+  ],
+  get players() {
+    return this._players;
+  },
+  get games() {
+    return this._games;
+  },
+  addPlayer(newFirstName, newLastName, newAge) {
+    let player = {
+      firstName: newFirstName,
+      lastName: newLastName,
+      age: newAge
+    };
+    this.players.push(player);
+  },
+  addGame(newOpponent,newTeamPoints,newOpponentPoints){
+    let game = {
+      opponent : newOpponent,
+      teamPoints : newTeamPoints,
+      opponentPoints : newOpponentPoints
+    };
+    this.games.push(game);
+  }
+};
+team.addPlayer('Bugs', 'Bunny', 76);
+console.log(team.players);
+team.addGame('Titans',100,98);
+console.log(team.games);
